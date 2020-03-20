@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function subStrArr(str) {
+            let r = [];
+            // 给定任意一个子输入都返回第一个符合条件的字串
+            let match = (str) => {
+                let j = str.match(/^(0+|1+)/)[0];
+                let o = (j[0] ^ 1).toString().repeat(j.length);
+                let reg = new RegExp(`^(${j}${o})`);
+                if (reg.test(str)) {
+                    if (reg.test(str)) {
+                        return RegExp.$1;
+                    } else {
+                        return '';
+                    }
+                }
+            }
+
+            // 通过for循环控制程序允许的流程
+            for (let i = 0, len = str.length - 1; i < len; i++) {
+                let sub = match(str.slice(i))
+                // console.log(str.slice(i))
+                if (sub) {
+                    r.push(sub);
+                }
+            }
+            return r;
+        }
+        subStrArr('00110011')
+        // console.log(subStrArr('00110011'))
+    </script>
+</body>
+
+</html>
