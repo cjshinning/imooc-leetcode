@@ -56,23 +56,35 @@
         // }
         // console.log(flower([1,0,0,0,1], 1));
 
-        function sortArr(arr){
-            for(let i=arr.length-1;i>0;i--){
-                for(let j=0;j<i;j++){
-                console.log(1);
-                    // let tmp = 0;
-                    // if(arr[j]>arr[j+1]){
-                    //     tmp = arr[j];
-                    //     arr[j+1] = arr[j];
-                    //     arr[j] = tmp;
-                    // }
-                }
+        // function sortArr(arr){
+        //     for(let i=arr.length-1,tmp;i>0;i--){
+        //         for(let j=0;j<i;j++){
+        //             tmp = arr[j];
+        //             if(tmp > arr[j+1]){
+        //                 arr[j] = arr[j+1];
+        //                 arr[j+1] = tmp;
+        //             }
+        //         }
                 
+        //     }
+        //     return arr;
+        // }
+
+
+        function sortArr(arr){
+            for(let i=arr.length-1,tmp;i>0;i--){
+                for(let j=0;j<i;j++){
+                    tmp = arr[j];
+                    if(tmp>arr[j+1]){
+                        arr[j]=arr[j+1];
+                        arr[j+1]=tmp;
+                    }
+                }
             }
             return arr;
         }
 
-        let arr1 = [13,2,4,5,16,24,7,56,89,1,7,9];
+        let arr1 = [13,2,4,5,16];
         console.log(sortArr(arr1));
     </script>
 </body>
